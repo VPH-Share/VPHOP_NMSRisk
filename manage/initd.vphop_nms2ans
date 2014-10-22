@@ -1,0 +1,60 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:             vphop_nms2ans
+# Required-Start:       $syslog
+# Required-Stop:        $syslog
+# Default-Start:        2 3 4 5
+# Default-Stop:         0 1 6
+# Short-Description:    vphop_nms2ans
+# Description:          vphop_nms2ans
+### END INIT INFO
+
+NAME=VPHOP_NMS2ANS
+DAEMON=/usr/local/bin/gunicorn
+DAEMON_USER=root
+APPDIR=/webapp/VPHOP_NMS2ANS-master
+APP=$NAME:application
+PIDDIR=/var/run/$NAME
+PIDFILE=/var/run/$NAME/$NAME.pid
+WORKERS=4
+HOST='0.0.0.0'
+PORT=8080
+
+test -x ${DAEMON} || exit 0
+set -e
+. /lib/lsb/init-functions
+
+
+case "${1}" in
+	start)
+		log_daemon_msg "Starting ${NAME}"
+		mkdir -p ${PIDDIR}
+		cd ${APPDIR}
+		if ($DAEMON -w $WORKERS -b $HOST:$PORT -p $PIDFILE -n $NAME -u $DAEMON_USER --daemon --preload ${APP}); then
+			log_end_msg 0
+		else
+			log_end_msg 1
+		fi
+	;;
+	stop)
+		log_daemon_msg "Stopping ${NAME}"
+		if (start-stop-daemon --stop --oknodo --retry 20 --pidfile $PIDFILE --chuid $DAEMON_USER); then
+			log_end_msg 0
+		else
+			log_end_msg 1
+		fi
+	;;
+	status)
+		status_of_proc -p ${PIDFILE} ${DAEMON} ${NAME}
+	;;
+	restart)
+		${0} stop
+		${0} start
+	;;
+	*)
+		echo "Usage: ${0} {start|stop|status|restart}" >&2
+	;;
+esac
+
+exit 0

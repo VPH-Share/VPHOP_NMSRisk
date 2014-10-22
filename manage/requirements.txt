@@ -1,0 +1,2 @@
+soaplib==2.0.0-beta2
+gunicorn==18.0
