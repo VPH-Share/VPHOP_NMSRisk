@@ -5,19 +5,19 @@ VPHOP_NMS2ANS SOAP Service Installer
 ### via `curl`
 
 ```Shell
-curl -L https://raw.github.com/asaglimbeni/VPHOP_NMS2ANS/master/install.sh | bash
+curl -L https://raw.github.com/VPH-Share/VPHOP_NMS2ANS/master/install.sh | bash
 ```
 
 ### via `wget`
 
 ```Shell
-wget --no-check-certificate https://raw.github.com/asaglimbeni/VPHOP_NMS2ANS/master/install.sh -O - | bash
+wget --no-check-certificate https://raw.github.com/VPH-Share/VPHOP_NMS2ANS/master/install.sh -O - | bash
 ```
 
 ### via `git`
 
 ```Shell
-git clone https://github.com/asaglimbeni/VPHOP_NMS2ANS.git
+git clone https://github.com/VPH-Share/VPHOP_NMS2ANS.git
 cd VPHOP_NMS2ANS
 manage/provision.sh 2>&1 | tee ~/VPHOP_NMS2ANS-install.log
 ```

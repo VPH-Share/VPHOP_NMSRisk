@@ -1,6 +1,6 @@
 #!/bin/bash
 #######################################
-export REPO_URL="https://github.com/asaglimbeni/VPHOP_NMS2ANS"
+export REPO_URL="https://github.com/VPH-Share/VPHOP_NMS2ANS"
 export REPO_URL=${REPO_URL%/}         # Remove trailing slash, if any
 export REPO_NAME=${REPO_URL##*/}      # Extract Repository name
 export REPO_USER=${REPO_URL%/*}       # Extract Repository user
