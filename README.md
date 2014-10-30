@@ -1,25 +1,25 @@
-## VPHOP_NMS2ANS
+## VPHOP_NMS2Risk
 
-VPHOP_NMS2ANS SOAP Service Installer
+VPHOP_NMS2Risk SOAP Service Installer
 
 ### via `curl`
 
 ```Shell
-curl -L https://raw.github.com/VPH-Share/VPHOP_NMS2ANS/master/install.sh | bash
+curl -L https://raw.github.com/VPH-Share/VPHOP_NMSRisk/master/install.sh | bash
 ```
 
 ### via `wget`
 
 ```Shell
-wget --no-check-certificate https://raw.github.com/VPH-Share/VPHOP_NMS2ANS/master/install.sh -O - | bash
+wget --no-check-certificate https://raw.github.com/VPH-Share/VPHOP_NMSRisk/master/install.sh -O - | bash
 ```
 
 ### via `git`
 
 ```Shell
-git clone https://github.com/VPH-Share/VPHOP_NMS2ANS.git
-cd VPHOP_NMS2ANS
-manage/provision.sh 2>&1 | tee ~/VPHOP_NMS2ANS-install.log
+git clone https://github.com/VPH-Share/VPHOP_NMSRisk.git
+cd VPHOP_NMSRisk
+manage/provision.sh 2>&1 | tee ~/VPHOP_NMSRisk-install.log
 ```
 
 #### Firewall Configuration
@@ -42,7 +42,7 @@ To be able to access the the server from external clients, certain port redirect
 <tr>
 <td>web </td>
 <td> TCP  </td>
-<td> 8080 </td>
+<td> 8081 </td>
 <td> 0.0.0.0/0 </td>
 <td>       </td>
 </tr>
@@ -64,7 +64,7 @@ To be able to access the the server from external clients, certain port redirect
 <tr>
 <td>soap         </td>
 <td> /  </td>
-<td> web(8080) </td>
+<td> web(8081) </td>
 <td> /?wsdl</td>
 </tr>
 </tbody>
