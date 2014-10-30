@@ -1,25 +1,25 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:             vphop_nms2ans
+# Provides:             vphop_nmsrisk
 # Required-Start:       $syslog
 # Required-Stop:        $syslog
 # Default-Start:        2 3 4 5
 # Default-Stop:         0 1 6
-# Short-Description:    vphop_nms2ans
-# Description:          vphop_nms2ans
+# Short-Description:    vphop_nmsrisk
+# Description:          vphop_nmsrisk
 ### END INIT INFO
 
-NAME=VPHOP_NMS2ANS
+NAME=VPHOP_NMSRisk
 DAEMON=/usr/local/bin/gunicorn
 DAEMON_USER=root
-APPDIR=/webapp/VPHOP_NMS2ANS-master
+APPDIR=/webapp/VPHOP_NMSRisk-master
 APP=$NAME:application
 PIDDIR=/var/run/$NAME
 PIDFILE=/var/run/$NAME/$NAME.pid
 WORKERS=4
 HOST='0.0.0.0'
-PORT=8080
+PORT=8081
 
 test -x ${DAEMON} || exit 0
 set -e
