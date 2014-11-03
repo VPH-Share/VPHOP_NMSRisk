@@ -36,7 +36,7 @@ def create_response(out):
     return r
 
 class VPHOP_NMSRisk(DefinitionBase):
-    @soap(String, String, String, _returns=RegisterResponse)
+    @soap(String, String, _returns=RegisterResponse)
     def register(self, input_file, output_path):
         output_file_1 = os.path.join(output_path, strftime("VPHOP_NMSRisk_RF_%d_%m_%Y__%H_%M_%S")+'.txt')
         output_file_2 = os.path.join(output_path, strftime("VPHOP_NMSRisk_total_output_%d_%m_%Y__%H_%M_%S")+'.txt')
