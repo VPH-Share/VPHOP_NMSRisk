@@ -13,7 +13,7 @@ setlocales
 log "Installing SOAPlib Commandline Wrapper dependencies"
 pkginstall python-pip
 pkginstall python-dev python-lxml
-pkginstall octave3.2
+pkginstall octave
 sudo pip install -r $REPO_DIR/manage/requirements.txt
 #######################################
 log "Configure SOAPLib to autostart"
