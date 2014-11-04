@@ -1,6 +1,6 @@
-## VPHOP_NMS2Risk
+## VPHOP_NMSRisk
 
-VPHOP_NMS2Risk SOAP Service Installer
+VPHOP_NMSRisk SOAP Service Installer
 
 ### via `curl`
 
