@@ -38,8 +38,8 @@ def create_response(out):
 class VPHOP_NMSRisk(DefinitionBase):
     @soap(String, String, _returns=RegisterResponse)
     def register(self, input_file, output_path):
-        output_file_1 = os.path.join(output_path, strftime("VPHOP_NMSRisk_RF_%d_%m_%Y__%H_%M_%S")+'.txt')
-        output_file_2 = os.path.join(output_path, strftime("VPHOP_NMSRisk_total_output_%d_%m_%Y__%H_%M_%S")+'.txt')
+        output_file_2 = os.path.join(output_path, strftime("VPHOP_NMSRisk_RF_%d_%m_%Y__%H_%M_%S")+'.txt')
+        output_file_1 = os.path.join(output_path, strftime("VPHOP_NMSRisk_total_output_%d_%m_%Y__%H_%M_%S")+'.txt')
         command = CMD_STR.format(input_file=input_file, output_file_1=output_file_1, output_file_2=output_file_2)
         try:
             out = emissary.envoy.run(command)
