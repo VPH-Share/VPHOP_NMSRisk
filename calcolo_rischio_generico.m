@@ -2,9 +2,9 @@
 %lancio excel
 %file='Results_TOT.pdrs';							%INPUT
 filein=argv(){1}
-fileout=argv(){2}
-RF=argv(){3}
-n_anni=str2num(argv(){4})
+fileout='total_risk.txt'
+RF='RF.txt'
+n_anni=10;
 
 % [file, path] = uigetfile('.pdrs','name of file to open');
 nomefile=[filein]
@@ -15,14 +15,11 @@ nc = 99;   % nuber of rows to be read from the data structure contained in the t
 % prompt = {'Enter number of rows of CHA matrix'};
 % answer = inputdlg(prompt,'nr')
 % rows=str2double(answer)
-
 % nr=rows     % number of columns to be read...
 
-%nr = 200;   % number of columns to be read...
 prima_colonna = nc-10; % first column to be stored in the 'data2' array
 data = fgetl(fid)
 data = fgetl(fid)
-
 
 data = fscanf(fid,'%g ',inf)
 w=size(data)
@@ -34,26 +31,9 @@ end
 clear data;
 fclose(fid); % closing the file just read
 
-% --------------------------------------------------
-% saving data in a new ASCII file
-% [file, path] = uiputfile('.txt','name of file to save');
-% nomefile=[path,file];
-% savefile='RF.txt'
-% save(savefile,'data2','-ascii');
-
 savefile=fileout;
 save(savefile,'data2','-ascii');
 
-% break
-% data = fscanf(fid,'%g',[nc,nr])
-% data2 = data';
-% data3 = data2(:,95:end);
-% clear data;
-
-%L'utente deve digitare a quale anno vuole calcolare il rischio
-% prompt = {'Enter the year at which the risk of fracture must be calculated'};
-% answer2= inputdlg(prompt,'risk_of_fracture')
-% y=str2double(answer2)
 risk_of_fracture=n_anni
 
 %Preparazione dei dati per il successivo calcolo dei vari rischi
