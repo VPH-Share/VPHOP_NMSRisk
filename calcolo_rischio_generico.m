@@ -2,8 +2,8 @@
 %lancio excel
 %file='Results_TOT.pdrs';							%INPUT
 filein=argv(){1}
-fileout='total_risk.txt'
-RF='RF.txt'
+fileout=argv(){2}
+RF=argv(){3}
 n_anni=10;
 
 % [file, path] = uigetfile('.pdrs','name of file to open');
